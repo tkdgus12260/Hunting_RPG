@@ -104,6 +104,8 @@ public class BossEnemy : MonoBehaviour
         {
             nav.enabled = true;
             canvasUI.DragonHpBarOn();
+            SoundManager.Inst.bgmPlayer.Stop();
+            SoundManager.Inst.PlayBGM(8);
         }
 
         if (spawnDistance > returnDis)
@@ -112,6 +114,8 @@ public class BossEnemy : MonoBehaviour
             curHealth = maxHealth;
             isOut = true;
             nav.enabled = false;
+            SoundManager.Inst.bgmPlayer.Stop();
+            SoundManager.Inst.PlayBGM(1);
         }
         // 스폰 포인트 도착 시
         else if (spawnDistance < 0.5f)

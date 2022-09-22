@@ -64,6 +64,8 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: a585f298d7ef14a2a9fe21408480dbd1, type: 3}
   - soundName: Inventory
     clip: {fileID: 8300000, guid: a98a6508b28444952aaba90db3d6e88f, type: 3}
+  - soundName: BossBattle
+    clip: {fileID: 8300000, guid: 567e3ce65d6705b4d8cf3b7264b66aa8, type: 3}
   bgmPlayer: {fileID: 330353816483740610}
   soundEffectPlayer: {fileID: 2027651472164883492}
 --- !u!82 &330353816483740610
