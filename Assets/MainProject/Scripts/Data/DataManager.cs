@@ -51,13 +51,8 @@ public class DataManager : MonoBehaviour
         path = Application.persistentDataPath + "/save";
     }
 
-    private void Start()
-    {
-    }
-
     public void SaveData()
     {
-        Debug.Log("세이브");
         string data = JsonUtility.ToJson(Player);
         File.WriteAllText(path + nowSlot.ToString(), data);
     }

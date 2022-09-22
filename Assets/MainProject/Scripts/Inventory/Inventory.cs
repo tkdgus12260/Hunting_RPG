@@ -38,7 +38,7 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        SlotCount = 4;
+        SlotCount = 16;
 
     }
 
@@ -64,7 +64,6 @@ public class Inventory : MonoBehaviour
     {
         if(other.tag == "Item")
         {
-            Debug.Log("get item");
             FieldItem fieldItems = other.GetComponent<FieldItem>();
             if (AddItem(fieldItems.GetItem()))
             {

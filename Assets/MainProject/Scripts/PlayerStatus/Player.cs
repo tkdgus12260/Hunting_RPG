@@ -83,14 +83,13 @@ public class Player : MonoBehaviour, IControllable, IStatus
     // 인벤토리
     public CanvasUI _canvasUI = null;
 
-    private bool toggleCameraRotation;
-    public bool isAttack;
-    private bool onRolling;
-    public bool isLanding;
-    public bool isGround;
-    public bool isJump;
-    private bool isDodge;
-    public bool isDeath;
+    public bool isAttack = false;
+    public bool isLanding = false;
+    public bool isGround = false;
+    public bool isJump = false;
+    private bool isDodge = false;
+    public bool isDeath = false;
+    public bool isInventory = false;
 
     public float moveSpeed = 5.0f;
     private float backSpeed = 3.0f;
@@ -220,7 +219,8 @@ public class Player : MonoBehaviour, IControllable, IStatus
     // 공격 시 함수
     private void Attack()
     {
-        anim.SetTrigger("onAttack");
+        if(!isInventory)
+            anim.SetTrigger("onAttack");
     }
 
     // 공격 시 collider 온 오프

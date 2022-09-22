@@ -23,9 +23,9 @@ public class Enemy : MonoBehaviour
     public bool isOut;
     private bool isDie;
 
+    private int droppercentage = 3;
     private float attackDis = 5.0f;
     private float returnDis = 20.0f;
-
     private float attackDelay = 2.0f;
 
     private void Awake()
@@ -107,8 +107,19 @@ public class Enemy : MonoBehaviour
                 break;
         }
 
-        Instantiate(dropItem, transform.position, transform.rotation);
+        DropItem();
         Destroy(gameObject, 2.5f);
+    }
+
+    // 아이템 드랍
+    private void DropItem()
+    {
+        int percentage = Random.Range(0, 10);
+
+        if(percentage <= droppercentage)
+        {
+            Instantiate(dropItem, transform.position, transform.rotation);
+        }
     }
 
     // 몬스터 플레이어 인식 함수

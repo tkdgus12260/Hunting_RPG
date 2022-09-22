@@ -17,7 +17,6 @@ public class hitTest : MonoBehaviour
     {
         if (other.tag == "Weapon")
         {
-            Debug.Log("피격 ");
             Sword weapon = other.GetComponent<Sword>();
 
             target.TakeExp(takeExp);

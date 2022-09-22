@@ -72,8 +72,11 @@ public class CameraMovement : MonoBehaviour, IControllable
 
     private void Update()
     {
-        rotX += -(mouseDelta.y) * sensitivity * Time.deltaTime;
-        rotY += mouseDelta.x * sensitivity * Time.deltaTime;
+        if (!GameManager.Inst.MainPlayer.isInventory)
+        {
+            rotX += -(mouseDelta.y) * sensitivity * Time.deltaTime;
+            rotY += mouseDelta.x * sensitivity * Time.deltaTime;
+        }
 
         rotX = Mathf.Clamp(rotX, -clampAngle, clampAngle);
         Quaternion rot = Quaternion.Euler(rotX, rotY, 0);

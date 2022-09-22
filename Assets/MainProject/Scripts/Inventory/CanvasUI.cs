@@ -89,6 +89,7 @@ public class CanvasUI : MonoBehaviour
 
     public void InventoryOnOff()
     {
+        GameManager.Inst.MainPlayer.isInventory = !GameManager.Inst.MainPlayer.isInventory;
         activeInventory = !activeInventory;
         inventoryPanel.SetActive(activeInventory);
         SoundManager.Inst.PlaySoundEffcet(7);
@@ -110,6 +111,7 @@ public class CanvasUI : MonoBehaviour
     // 일시정지 창 온 오프
     public void PauseOnOff()
     {
+        GameManager.Inst.MainPlayer.isInventory = !GameManager.Inst.MainPlayer.isInventory;
         isPause = !isPause;
 
         if (isPause)
