@@ -31,6 +31,14 @@ public class CanvasUI : MonoBehaviour
     public Slot[] slots;
     public Transform slotHolder;
 
+    private void Awake()
+    {
+        if (!DataManager.Inst.Player.continuePlay)
+        {
+            StartCoroutine(ManualCoroutine());
+        }
+    }
+
     private void Start()
     {
         inven = Inventory.instance;
@@ -40,11 +48,6 @@ public class CanvasUI : MonoBehaviour
         inventoryPanel.SetActive(activeInventory);
         pausePanel.SetActive(activePause);
         playerName.text = DataManager.Inst.Player.name;
-
-        if (!DataManager.Inst.Player.continuePlay)
-        {
-            StartCoroutine(ManualCoroutine());
-        }
     }
 
     private void SlotChange(int var)

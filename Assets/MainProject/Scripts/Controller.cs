@@ -21,10 +21,12 @@ public class Controller : MonoBehaviour
         actions.Player.Enable();
 
         actions.Player.Move.performed += OnMoveInput;
+        actions.Player.Move.canceled += OnMoveInput;
 
         actions.Player.Attack.performed += OnAttackInput;
 
         actions.Player.MouseDelta.performed += OnMouseDelta;
+        actions.Player.MouseDelta.canceled += OnMouseDelta;
 
         actions.Player.Rolling.performed += OnRollingInput;
 
@@ -41,10 +43,12 @@ public class Controller : MonoBehaviour
     public void UnRegisterInputAction()
     {
         actions.Player.Move.performed -= OnMoveInput;
+        actions.Player.Move.canceled -= OnMoveInput;
 
         actions.Player.Attack.performed -= OnAttackInput;
 
         actions.Player.MouseDelta.performed -= OnMouseDelta;
+        actions.Player.MouseDelta.canceled -= OnMouseDelta;
 
         actions.Player.Rolling.performed -= OnRollingInput;
 

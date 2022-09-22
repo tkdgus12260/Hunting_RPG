@@ -22,6 +22,7 @@ public class MainScene : MonoBehaviour
         // 씬으로 돌아올 때 파괴된 플레이어 오브젝트를 다시 찾기
         GameManager.Inst.Initialize();
         _playerCtrl.RegisterInputAction();
+        DataManager.Inst.Player.continuePlay = true;
 
     }
 
