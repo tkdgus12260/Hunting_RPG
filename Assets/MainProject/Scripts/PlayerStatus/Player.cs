@@ -300,6 +300,7 @@ public class Player : MonoBehaviour, IControllable, IStatus
             DataManager.Inst.Player.MaxEXP *= 1.3f;
             DataManager.Inst.Player.MaxHP += 100.0f;
             DataManager.Inst.Player.HP = DataManager.Inst.Player.MaxHP;
+            SoundManager.Inst.PlaySoundEffcet(6);
         }
     }
 

@@ -74,7 +74,7 @@ public class CanvasUI : MonoBehaviour
     {
         activeInventory = !activeInventory;
         inventoryPanel.SetActive(activeInventory);
-
+        SoundManager.Inst.PlaySoundEffcet(7);
         activeCursor = !activeCursor;
 
         if (activeCursor)

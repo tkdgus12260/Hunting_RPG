@@ -32,6 +32,10 @@ public class BossEnemy : MonoBehaviour
     private BossEnemyUI bossEnemyUI = null;
     private CanvasUI canvasUI = null;
 
+    public AudioSource DragonScream = null;
+    public AudioSource DragonFootStep = null;
+    public AudioSource DragonDeathSound = null;
+
     // 플레이어 인식 거리 밖으로 나왔을 때
     public bool isOut = false;
     public bool isDie = false;
@@ -296,6 +300,19 @@ public class BossEnemy : MonoBehaviour
             isAttack = false;
             nav.enabled = true;
         }
+    }
+
+    public void Scream()
+    {
+        DragonScream.Play();
+    }
+    public void FootStep()
+    {
+        DragonFootStep.Play();
+    }
+    public void DragonDeath()
+    {
+        DragonDeathSound.Play();
     }
 
     private void TargetDeath()

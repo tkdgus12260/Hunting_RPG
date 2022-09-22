@@ -125,6 +125,7 @@ public class EnemySpawn : MonoBehaviour
                 instDragon = Instantiate(dragonEnemy);
                 instDragon.transform.position = transform.position;
                 instDragon.transform.rotation = transform.rotation;
+                instDragon.GetComponent<BossEnemy>().Init(this);
             }
         }
     }

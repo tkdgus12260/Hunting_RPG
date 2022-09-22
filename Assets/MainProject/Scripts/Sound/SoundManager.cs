@@ -45,4 +45,12 @@ public class SoundManager : MonoBehaviour
         bgmPlayer.clip = bgmSounds[bgmNum].clip;
         bgmPlayer.Play();
     }
+
+    public AudioSource soundEffectPlayer;
+
+    public void PlaySoundEffcet(int bgmNum)
+    {
+        soundEffectPlayer.clip = bgmSounds[bgmNum].clip;
+        soundEffectPlayer.Play();
+    }
 }

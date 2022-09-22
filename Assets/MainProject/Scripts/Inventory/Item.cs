@@ -26,6 +26,7 @@ public class Item
             if (DataManager.Inst.Player.HP < DataManager.Inst.Player.MaxHP)
             {
                 isUsed = eft.ExecuteRole();
+                SoundManager.Inst.PlaySoundEffcet(5);
             }
             else
             {
