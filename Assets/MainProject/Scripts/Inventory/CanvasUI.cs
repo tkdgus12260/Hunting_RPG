@@ -15,6 +15,7 @@ public class CanvasUI : MonoBehaviour
     public GameObject alteregoHpBar = null;
     public GameObject gameoverPanel = null;
     public GameObject clearPanel = null;
+    public GameObject manualPanel = null;
 
     public Text playerName;
 
@@ -39,6 +40,11 @@ public class CanvasUI : MonoBehaviour
         inventoryPanel.SetActive(activeInventory);
         pausePanel.SetActive(activePause);
         playerName.text = DataManager.Inst.Player.name;
+
+        if (!DataManager.Inst.Player.continuePlay)
+        {
+            StartCoroutine(ManualCoroutine());
+        }
     }
 
     private void SlotChange(int var)
@@ -56,6 +62,13 @@ public class CanvasUI : MonoBehaviour
                 slots[i].GetComponent<Button>().interactable = false;
             }
         }
+    }
+
+    IEnumerator ManualCoroutine()
+    {
+        manualPanel.SetActive(true);
+        yield return new WaitForSeconds(10.0f);
+        manualPanel.SetActive(false);
     }
 
     public void pickUpSlotUI()
@@ -172,7 +185,6 @@ public class CanvasUI : MonoBehaviour
 
     public void MenuScene()
     {
-        //Time.timeScale = 0.0f;
         SceneManager.LoadScene(0);
     }
 

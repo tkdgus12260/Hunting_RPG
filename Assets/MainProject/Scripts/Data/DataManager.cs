@@ -13,6 +13,7 @@ public class PlayerData
     public float EXP = 0.0f;
     public float MaxEXP = 100.0f;
     public Vector3 playerPos = new Vector3(-220, 0, -230);
+    public bool continuePlay = false;
 }
 
 public class DataManager : MonoBehaviour
