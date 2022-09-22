@@ -75,6 +75,7 @@ public class Player : MonoBehaviour, IControllable, IStatus
     private Animator anim = null;
     private CapsuleCollider capsuleCollider = null;
     public BoxCollider weapon = null;
+    public GameObject hitEffect = null;
     public AudioSource enemyHitClip = null;
     public AudioSource swordClip = null;
     public AudioSource footClip = null;
@@ -316,6 +317,7 @@ public class Player : MonoBehaviour, IControllable, IStatus
     public void TakeDamage(float damage)
     {
         DataManager.Inst.Player.HP -= damage;
+        hitEffect.SetActive(true);
 
         if(DataManager.Inst.Player.HP <= 0.0f)
         {
