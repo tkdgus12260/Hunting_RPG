@@ -70,7 +70,7 @@ public class BossEnemy : MonoBehaviour
         {
             FollowTarget();
             RushAttackDelay();
-            //ChargingAttack();
+            ChargingAttack();
             StartCoroutine(AlterEgo());
 
             if (nav.enabled)

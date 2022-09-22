@@ -1257,7 +1257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68612b64d5cd54eb5b11297387efb2f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currenType: 2
+  currenType: 1
   buttonScale: {fileID: 119486035}
 --- !u!114 &760352884
 MonoBehaviour:
