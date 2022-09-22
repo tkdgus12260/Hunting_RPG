@@ -9,11 +9,12 @@ public class CanvasUI : MonoBehaviour
 {
     Inventory inven;
 
-    public GameObject inventoryPanel;
-    public GameObject pausePanel;
-    public GameObject dragonHpBar;
-    public GameObject alteregoHpBar;
-    public GameObject gameoverPanel;
+    public GameObject inventoryPanel = null;
+    public GameObject pausePanel = null;
+    public GameObject dragonHpBar = null;
+    public GameObject alteregoHpBar = null;
+    public GameObject gameoverPanel = null;
+    public GameObject clearPanel = null;
 
     public Text playerName;
 
@@ -124,6 +125,19 @@ public class CanvasUI : MonoBehaviour
         gameoverPanel.SetActive(true);
         SoundManager.Inst.bgmPlayer.Stop();
         SoundManager.Inst.PlayBGM(4);
+    }
+
+    public void Clear()
+    {
+        StartCoroutine(GameClear());
+    }
+
+    IEnumerator GameClear()
+    {
+        yield return new WaitForSeconds(4.0f);
+        clearPanel.SetActive(true);
+        yield return new WaitForSeconds(4.0f);
+        MenuScene();
     }
 
     // 드래곤 hp바 켜기

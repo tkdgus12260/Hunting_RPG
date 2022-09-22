@@ -93,6 +93,7 @@ public class Player : MonoBehaviour, IControllable, IStatus
     public bool isDeath;
 
     public float moveSpeed = 5.0f;
+    private float backSpeed = 3.0f;
     public float runSpeed = 8.0f;
     public float jumpPower = 5.0f;
     public float dodgePower = 7.0f;
@@ -168,12 +169,14 @@ public class Player : MonoBehaviour, IControllable, IStatus
 
         float aValue = Keyboard.current.aKey.ReadValue();
         float dValue = Keyboard.current.dKey.ReadValue();
+        float sValue = Keyboard.current.sKey.ReadValue();
 
         // 플레이어 좌 우 이동 애니메이션
         if (aValue == 0 || dValue == 0)
         {
             anim.SetBool("isLeft", false);
             anim.SetBool("isRight", false);
+            anim.SetBool("isBack", false);
         }
 
         // 플레이어 좌 우 이동
@@ -188,6 +191,11 @@ public class Player : MonoBehaviour, IControllable, IStatus
             {
                 anim.SetBool("isRight", true);
                 transform.position += moveDirection.normalized * Time.deltaTime * moveSpeed;
+            }
+            else if (sValue == 1)
+            {
+                anim.SetBool("isBack", true);
+                transform.position += moveDirection.normalized * Time.deltaTime * backSpeed;
             }
             else
             {

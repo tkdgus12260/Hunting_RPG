@@ -14,7 +14,7 @@ public class BossAlterEgo : MonoBehaviour
     private float backSpped = 3.0f;
     private float rushSpeed = 9.0f;
 
-    public BossEnemy mainDragon = null;
+    private BossEnemy mainDragon = null;
 
     public BoxCollider meleeArea = null;
     public BoxCollider rushArea = null;
@@ -23,6 +23,9 @@ public class BossAlterEgo : MonoBehaviour
     private Animator ani = null;
     private EnemySpawn spawn = null;
     private CanvasUI canvasUI = null;
+
+    public AudioSource DragonFootStep = null;
+    public AudioSource DragonDeathSound = null;
 
     // 몬스터의 공격 여부
     public bool isAttack = false;
@@ -170,6 +173,15 @@ public class BossAlterEgo : MonoBehaviour
         nav.enabled = true;
         isRushAttack = false;
         isAttack = false;
+    }
+
+    public void FootStep()
+    {
+        DragonFootStep.Play();
+    }
+    public void DragonDeath()
+    {
+        DragonDeathSound.Play();
     }
 
     // 몬스터 피격 판정

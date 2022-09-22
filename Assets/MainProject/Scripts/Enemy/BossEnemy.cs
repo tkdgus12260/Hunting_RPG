@@ -347,6 +347,7 @@ public class BossEnemy : MonoBehaviour
         nav.enabled = false;
         canvasUI.DragonHpBarOff();
         ani.SetTrigger("onDie");
+        canvasUI.Clear();
         Destroy(gameObject, 2.5f);
     }
 }
