@@ -7,6 +7,8 @@ TagManager:
   - HitArea
   - Weapon
   - Item
+  - Obj
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - UI
   - Weapon
   - EnemyDie
-  - 
+  - Map
   - 
   - 
   - 

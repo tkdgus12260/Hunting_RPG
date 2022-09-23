@@ -91,10 +91,9 @@ public class CameraMovement : MonoBehaviour, IControllable
 
         RaycastHit hit;
 
-        if(Physics.Linecast(transform.position, finalDir, out hit))
+        if(Physics.Linecast(transform.position, finalDir, out hit,1 << LayerMask.NameToLayer("Map")))
         {
-            if(hit.transform.tag != "Enemy" || hit.transform.tag != "Item");
-                finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+            finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }
         else
         {
