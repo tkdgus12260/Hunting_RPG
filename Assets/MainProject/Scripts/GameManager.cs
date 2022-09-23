@@ -57,4 +57,5 @@ public class GameManager : MonoBehaviour
         mainPlayer = FindObjectOfType<Player>();
         mainCamera = FindObjectOfType<CameraMovement>();
     }
+
 }

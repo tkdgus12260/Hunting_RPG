@@ -27,7 +27,6 @@ public class PlayerHealthBar : MonoBehaviour
         if (player != null)
         {
             healthBar.value = player.HP / player.MaxHP;
-            //healthText.text = $"{player.HP}";
             healthText.text = $"{player.HP.ToString("N0")}";
         }
     }

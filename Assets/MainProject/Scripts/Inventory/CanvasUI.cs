@@ -185,7 +185,6 @@ public class CanvasUI : MonoBehaviour
     public void Save()
     {
         DataManager.Inst.SaveData();
-        GameManager.Inst.MainPlayer.SavePlayerPos();
     }
 
     public void MenuScene()

@@ -405,8 +405,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyType: 1
-  curHealth: 40
-  maxHealth: 200
+  curHealth: 300
+  maxHealth: 300
   takeExp: 100
   meleeArea: {fileID: 6285452974280212653}
   dropItem: {fileID: 4040717076831550893, guid: 9d7474ddf67ec4887a059e4138e194cb, type: 3}

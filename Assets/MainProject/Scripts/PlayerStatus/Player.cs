@@ -92,9 +92,9 @@ public class Player : MonoBehaviour, IControllable, IStatus
     public bool isDeath = false;
     public bool isInventory = false;
 
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 3.0f;
     private float backSpeed = 3.0f;
-    public float runSpeed = 8.0f;
+    public float runSpeed = 6.0f;
     public float jumpPower = 5.0f;
     public float dodgePower = 7.0f;
     private float smoothness = 10f;
@@ -152,11 +152,6 @@ public class Player : MonoBehaviour, IControllable, IStatus
         HP = DataManager.Inst.Player.HP;
         Level = DataManager.Inst.Player.level;
         EXP = DataManager.Inst.Player.EXP;
-    }
-
-    // 플레이어 위치 저장
-    public void SavePlayerPos()
-    {
         DataManager.Inst.Player.playerPos = this.transform.position;
     }
 
@@ -199,9 +194,17 @@ public class Player : MonoBehaviour, IControllable, IStatus
             }
             else
             {
-                transform.position += moveDirection.normalized * Time.deltaTime * moveSpeed;
+                if (Keyboard.current.leftShiftKey.isPressed)
+                {
+                    transform.position += moveDirection.normalized * Time.deltaTime * runSpeed;
+                }
+                else
+                {
+                    transform.position += moveDirection.normalized * Time.deltaTime * moveSpeed;
+                }
                 float percont = ((Keyboard.current.leftShiftKey.isPressed) ? 1 : 0.5f) * moveDirection.magnitude;
                 anim.SetFloat("Blend", percont, 0.1f, Time.deltaTime);
+                
             }
         }
     }

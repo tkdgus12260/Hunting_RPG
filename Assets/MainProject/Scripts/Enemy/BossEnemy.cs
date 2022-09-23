@@ -129,6 +129,7 @@ public class BossEnemy : MonoBehaviour
         if (isOut == true)
         {
             isDelay = false;
+            rushAttack = 0;
             transform.LookAt(spawn.gameObject.transform.position);
             transform.position = Vector3.MoveTowards(transform.position, spawn.transform.position, 5 * Time.deltaTime);
         }

@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b36a5d048c588419093e38d032efa904, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objToFollow: {fileID: 5757521670126006557, guid: cb27854a5adf1498ab03565df2660440, type: 3}
+  objToFollow: {fileID: 0}
   followSpeed: 10
   sensitivity: 20
   clampAngle: 70
@@ -53,7 +53,7 @@ MonoBehaviour:
   dirNormalized: {x: 0, y: 0, z: 0}
   finalDir: {x: 0, y: 0, z: 0}
   minDistance: 1
-  maxDistance: 3.5
+  maxDistance: 7
   finalDistance: 0
   smoothness: 10
 --- !u!1 &3655261635902294694
