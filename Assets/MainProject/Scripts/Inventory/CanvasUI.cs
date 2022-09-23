@@ -190,6 +190,8 @@ public class CanvasUI : MonoBehaviour
     public void MenuScene()
     {
         SceneManager.LoadScene(0);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // 인벤토리 칸 추가
