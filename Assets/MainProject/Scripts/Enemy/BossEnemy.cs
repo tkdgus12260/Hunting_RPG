@@ -337,6 +337,7 @@ public class BossEnemy : MonoBehaviour
         {
             Sword weapon = other.GetComponent<Sword>();
             curHealth -= weapon.damage;
+            GameManager.Inst.MainPlayer.enemyHitClip.Play();
 
             // 몬스터 사망 시
             if (curHealth <= 0)

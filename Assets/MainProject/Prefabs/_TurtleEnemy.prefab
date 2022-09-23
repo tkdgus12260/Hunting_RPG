@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 8613875450085661614}
   m_Layer: 0
   m_Name: _TurtleEnemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

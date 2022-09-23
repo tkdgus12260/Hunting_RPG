@@ -93,7 +93,8 @@ public class CameraMovement : MonoBehaviour, IControllable
 
         if(Physics.Linecast(transform.position, finalDir, out hit))
         {
-            finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
+            if(hit.transform.tag != "Enemy" || hit.transform.tag != "Item");
+                finalDistance = Mathf.Clamp(hit.distance, minDistance, maxDistance);
         }
         else
         {
